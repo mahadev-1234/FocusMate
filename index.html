@@ -96,5 +96,17 @@
       const seconds = (time % 60).toString().padStart(2, "0");
       document.getElementById("timer").textContent = \`\${minutes}:\${seconds}`\;
       }
+	function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        if (time > 0) {
+          time--;
+          updateDisplay();
+        } else {
+          clearInterval(timer);
+          alert("Pomodoro done! Take a break!");
+        }
+      }, 1000);
+    }
 </body>
 </html>
