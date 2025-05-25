@@ -80,7 +80,7 @@
       if (taskText === "") return;
 
     const li = document.createElement("li");
-      li.innerHTML = \`
+      li.innerHTML = `\
         \${taskText}
         <button onclick="this.parentElement.remove()">❌</button>
       \`;
@@ -108,5 +108,13 @@
         }
       }, 1000);
     }
+	function resetTimer() {
+      clearInterval(timer);
+      time = 25 * 60;
+      updateDisplay();
+    }
+
+    updateDisplay();
+  </script>
 </body>
 </html>
