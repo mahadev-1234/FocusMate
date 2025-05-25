@@ -77,7 +77,16 @@
 
     function addTask() {
       const taskText = taskInput.value.trim();
-      if (taskText === "") return;}
-</script>	    
+      if (taskText === "") return;
+
+    const li = document.createElement("li");
+      li.innerHTML = \`
+        \${taskText}
+        <button onclick="this.parentElement.remove()">❌</button>
+      \`;
+      taskList.appendChild(li);
+      taskInput.value = "";
+    }
+</script>	
 </body>
 </html>
