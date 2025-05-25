@@ -7,5 +7,17 @@
 </style>
 </head>
 <body>
+	function startTimer() {
+      clearInterval(timer);
+      timer = setInterval(() => {
+        if (time > 0) {
+          time--;
+          updateDisplay();
+        } else {
+          clearInterval(timer);
+          alert("Pomodoro done! Take a break!");
+        }
+      }, 1000);
+    }
 </body>
 </html>
