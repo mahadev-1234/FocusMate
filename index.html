@@ -87,6 +87,14 @@
       taskList.appendChild(li);
       taskInput.value = "";
     }
-</script>	
+	// === Pomodoro Timer ===
+    let timer;
+    let time = 25 * 60; // 25 minutes in seconds
+
+    function updateDisplay() {
+      const minutes = Math.floor(time / 60).toString().padStart(2, "0");
+      const seconds = (time % 60).toString().padStart(2, "0");
+      document.getElementById("timer").textContent = \`\${minutes}:\${seconds}`\;
+      }
 </body>
 </html>
