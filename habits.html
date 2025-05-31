@@ -108,7 +108,26 @@
     		<button onclick="location.href='index.html'">🏠 Tasks</button>
     		<button onclick="location.href='habits.html'">🌱 Habits</button>
   	  </div>
- <script>
-</script>
- </body>
+
+ <!-- HABIT TRACKER -->
+  <div class="habit-section">
+    <h2>🗓️ Habit Tracker</h2>
+    <div class="habit-form">
+      <input type="text" id="habitInput" placeholder="Enter habit (e.g., Drink Water)" />
+      <button onclick="addHabit()">Add Habit</button>
+    </div>
+    <table id="habitTable">
+      <thead>
+        <tr>
+          <th>Habit</th>
+          <th>Sun</th><th>Mon</th><th>Tue</th>
+          <th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+  </div>
+	  <script>
+	  </script>
+  </body>
 </html>
