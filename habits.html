@@ -132,7 +132,51 @@
      <div class="quote-section" id="quoteBox">
        💡 “Stay consistent, even when it’s boring.”
      </div>
-    <script>
-    </script>
+
+   <script>
+	   // === Habit Tracker ===
+    const habitInput = document.getElementById("habitInput");
+    const habitTable = document.querySelector("#habitTable tbody");
+
+    function addHabit() {
+      const habit = habitInput.value.trim();
+      if (!habit) return;
+
+      const row = document.createElement("tr");
+      let rowHTML = `<td>${habit}</td>`;
+      for (let i = 0; i < 7; i++) {
+        rowHTML += `<td><input type="checkbox"></td>`;
+      }
+      row.innerHTML = rowHTML;
+      habitTable.appendChild(row);
+      habitInput.value = "";
+    }
+
+    // === Sticky Notes ===
+    const notesContainer = document.getElementById("notesContainer");
+
+    function addNote(text = "") {
+      const note = document.createElement("div");
+      note.className = "note";
+      note.contentEditable = true;
+      note.innerHTML = `
+        <button onclick="this.parentElement.remove()">x</button>
+        ${text}
+      `;
+      notesContainer.appendChild(note);
+    }
+
+    // === Quote Generator ===
+    const quotes = [
+      "Push through the boring to get to the great.",
+      "Small steps every day lead to big change.",
+      "Discipline beats motivation.",
+      "Keep going even if it's hard.",
+      "You're building something amazing."
+    ];
+    const quoteBox = document.getElementById("quoteBox");
+    const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+    quoteBox.textContent = `💡 “${randomQuote}”`;
+   </script>
 </body>
 </html>
